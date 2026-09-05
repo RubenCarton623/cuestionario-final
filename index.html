@@ -87,6 +87,36 @@
             <button class="menu-btn" onclick="iniciarPreguntas(2)" style="width:100%;">SEMANA 2</button>
             <button class="menu-btn" onclick="iniciarPreguntas(3)" style="width:100%;">SEMANA 3</button>
             <button class="menu-btn" onclick="iniciarPreguntas(4)" style="width:100%;">SEMANA 4</button>
+            <button class="menu-btn" onclick="mostrarMenuPreguntas()" style="width:100%; background:#6f42c1;">
+                📚 VER TODAS LAS PREGUNTAS
+            </button>
+        </div>
+        <div id="menu-preguntas" style="display:none; width:100%; max-width:400px; margin:20px auto;">
+
+            <h2 style="text-align:center; font-size:1.1rem;">
+                📚 Banco completo de preguntas
+            </h2>
+
+            <button onclick="mostrarTodasPreguntas(1)" style="background:#007bff;">
+                SEMANA 1
+            </button>
+
+            <button onclick="mostrarTodasPreguntas(2)" style="background:#28a745;">
+                SEMANA 2
+            </button>
+
+            <button onclick="mostrarTodasPreguntas(3)" style="background:#ffc107; color:#000;">
+                SEMANA 3
+            </button>
+
+            <button onclick="mostrarTodasPreguntas(4)" style="background:#dc3545;">
+                SEMANA 4
+            </button>
+
+            <button onclick="regresarMenuPrincipal()" style="background:#6c757d;">
+                ⬅️ Regresar al menú
+            </button>
+
         </div>
     </div>
 
@@ -951,6 +981,119 @@
     btnReiniciar.style.display = "none";
     btnRegresar.style.display = "none";
     });
+
+    function mostrarMenuPreguntas() {
+
+        document.getElementById("menu-inicial").style.display = "none";
+        document.getElementById("menu-preguntas").style.display = "block";
+
+        document.getElementById("contador").style.display = "none";
+        document.getElementById("contenedor").innerHTML = "";
+
+        ocultarBotones();
+    }
+
+
+    function mostrarTodasPreguntas(tipo) {
+
+        let conjunto;
+
+        if (tipo === 1) conjunto = json1;
+        else if (tipo === 2) conjunto = json2;
+        else if (tipo === 3) conjunto = json3;
+        else if (tipo === 4) conjunto = json4;
+
+        const contenedor = document.getElementById("contenedor");
+
+        document.getElementById("menu-preguntas").style.display = "none";
+        document.getElementById("contador").style.display = "none";
+
+        contenedor.innerHTML = `
+            <div style="
+                background:white;
+                padding:15px;
+                border-radius:10px;
+                margin-bottom:15px;
+            ">
+                <h2 style="text-align:center;">
+                    📚 Semana ${tipo}
+                </h2>
+
+                <p style="text-align:center;">
+                    ${conjunto.length} preguntas
+                </p>
+            </div>
+        `;
+
+        const boton = document.createElement("button");
+
+        boton.textContent = "⬅️ Volver al menú de semanas";
+        boton.style.background = "#6c757d";
+
+        boton.onclick = function () {
+            document.getElementById("contenedor").innerHTML = "";
+            document.getElementById("menu-preguntas").style.display = "block";
+        };
+
+        contenedor.appendChild(boton);
+
+        conjunto.forEach((p, index) => {
+
+            const preguntaHTML = document.createElement("div");
+
+            preguntaHTML.style.background = "white";
+            preguntaHTML.style.padding = "15px";
+            preguntaHTML.style.marginBottom = "15px";
+            preguntaHTML.style.borderRadius = "10px";
+            preguntaHTML.style.border = "1px solid #ddd";
+
+            preguntaHTML.innerHTML = `
+                <p>
+                    <b>Pregunta ${index + 1}</b>
+                </p>
+
+                <h3 style="font-size:1rem;">
+                    ${p.pregunta}
+                </h3>
+
+                ${p.opciones.map((opcion, i) => `
+                    <div style="
+                        padding:8px;
+                        margin:5px 0;
+                        border-radius:6px;
+                        background:${opcion === p.respuesta ? '#d4edda' : '#f8f9fa'};
+                        border:1px solid ${opcion === p.respuesta ? '#28a745' : '#ddd'};
+                    ">
+                        ${String.fromCharCode(65 + i)}. ${opcion}
+                        ${opcion === p.respuesta ? ' ✅' : ''}
+                    </div>
+                `).join("")}
+
+                <p style="
+                    margin-top:10px;
+                    padding:10px;
+                    background:#e8f5e9;
+                    border-radius:6px;
+                    color:#155724;
+                ">
+                    <b>✅ Respuesta correcta:</b><br>
+                    ${p.respuesta}
+                </p>
+            `;
+
+            contenedor.appendChild(preguntaHTML);
+        });
+        
+    }
+
+
+    function regresarMenuPrincipal() {
+
+        document.getElementById("menu-preguntas").style.display = "none";
+        document.getElementById("menu-inicial").style.display = "block";
+
+        document.getElementById("contenedor").innerHTML = "";
+    }
   </script>
 </body>
 </html>
