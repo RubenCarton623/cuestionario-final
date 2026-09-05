@@ -113,6 +113,10 @@
                 SEMANA 4
             </button>
 
+            <button onclick="mostrarTodasPreguntas(5)" style="background:#95087d;">
+                GENERAL
+            </button>
+
             <button onclick="regresarMenuPrincipal()" style="background:#6c757d;">
                 ⬅️ Regresar al menú
             </button>
@@ -874,6 +878,740 @@
             "respuesta": "Monitorear actividades y realizar auditorías internas para evaluar la eficacia."
         }
     ];
+
+
+    const json5 = [
+        {
+            "pregunta": "El marco CIS Controls está estructurado para facilitar su adopción. ¿Cómo organiza su proceso de implementación?",
+            "opciones": [
+                "Dividiendo la implementación en tres grupos: lo básico, lo fundacional y lo organizacional.",
+                "A través de la obtención de una certificación obligatoria por parte de un auditor externo.",
+                "Basándose en las cinco funciones del núcleo: Identificar, Proteger, Detectar, Responder y Recuperar.",
+                "Siguiendo el ciclo PDCA (Planificar, Hacer, Verificar, Actuar) de forma estricta."
+            ],
+            "respuesta": "Dividiendo la implementación en tres grupos: lo básico, lo fundacional y lo organizacional."
+        },
+        {
+            "pregunta": "El Mando Conjunto del Ciberespacio (MCCD) tiene un ámbito de actuación específico en España. ¿Cuál es?",
+            "opciones": [
+                "Las infraestructuras críticas del sector privado, como la banca y la energía.",
+                "Las redes y sistemas de información y telecomunicaciones del Ministerio de Defensa.",
+                "La red académica y de investigación española (RedIRIS).",
+                "Las redes de todas las Administraciones Públicas y organismos estatales."
+            ],
+            "respuesta": "Las redes y sistemas de información y telecomunicaciones del Ministerio de Defensa."
+        },
+        {
+            "pregunta": "En el contexto de los controles de seguridad, ¿qué ejemplo corresponde a un 'control administrativo'?",
+            "opciones": [
+                "La instalación de cámaras de videovigilancia en el centro de datos.",
+                "La implementación de una política de contraseñas y un programa de capacitación para empleados.",
+                "La instalación de un sistema de autenticación multifactor (MFA).",
+                "El cifrado de los discos duros de los ordenadores portátiles."
+            ],
+            "respuesta": "La implementación de una política de contraseñas y un programa de capacitación para empleados."
+        },
+        {
+            "pregunta": "La Estrategia Nacional contra el Crimen Organizado y la Delincuencia Grave establece varias líneas de acción en materia de cibercrimen. ¿Cuál de las siguientes es una de ellas?",
+            "opciones": [
+                "Reducir la colaboración con el sector privado para mantener la confidencialidad de las operaciones.",
+                "Centralizar toda la investigación en una única unidad especializada de la Policía Nacional.",
+                "Limitar la cooperación internacional para evitar la fuga de información sensible.",
+                "Incrementar el control sobre los criptoactivos como medio de pago en actividades cibercriminales."
+            ],
+            "respuesta": "Incrementar el control sobre los criptoactivos como medio de pago en actividades cibercriminales."
+        },
+        {
+            "pregunta": "¿Cuál es la función principal del Foro Nacional de Ciberseguridad, según la Estrategia Nacional de Ciberseguridad?",
+            "opciones": [
+                "Coordinar a nivel operacional a los distintos ministerios durante un incidente.",
+                "Potenciar las sinergias público-privadas en materia de ciberseguridad.",
+                "Dictar directrices político-estratégicas vinculantes para la gestión de crisis.",
+                "Ejecutar operaciones de contrainteligencia en el ciberespacio."
+            ],
+            "respuesta": "Potenciar las sinergias público-privadas en materia de ciberseguridad."
+        },
+        {
+            "pregunta": "La Estrategia de Seguridad Nacional de 2017 sitúa las ciberamenazas al mismo nivel que otras amenazas graves. ¿Cuál de las siguientes NO se menciona explícitamente en esa misma categoría?",
+            "opciones": [
+                "El espionaje y la proliferación de armas de destrucción masiva.",
+                "La desinformación y las noticias falsas.",
+                "El crimen organizado y las amenazas sobre infraestructuras críticas.",
+                "Conflictos armados y terrorismo."
+            ],
+            "respuesta": "La desinformación y las noticias falsas."
+        },
+        {
+            "pregunta": "Dentro de la estructura de ciberseguridad de España, ¿qué función tiene la Comisión Permanente de Ciberseguridad?",
+            "opciones": [
+                "Actuar como punto de contacto con el sector privado y la academia.",
+                "Gestionar las crisis en su conjunto, no solo las de ciberseguridad.",
+                "Asistir al Presidente del Gobierno en la dirección de la política de Seguridad Nacional.",
+                "Facilitar la coordinación interministerial a nivel operacional."
+            ],
+            "respuesta": "Facilitar la coordinación interministerial a nivel operacional."
+        },
+        {
+            "pregunta": "¿Qué organismo en España actúa como CERT Gubernamental Nacional, siendo responsable de ciberataques sobre sistemas clasificados y de las Administraciones Públicas?",
+            "opciones": [
+                "Mando Conjunto del Ciberespacio (MCCD)",
+                "Instituto Nacional de Ciberseguridad (INCIBE)",
+                "Centro Nacional de Protección de Infraestructuras Críticas (CNPIC)",
+                "Centro Criptológico Nacional (CCN-CERT)"
+            ],
+            "respuesta": "Centro Criptológico Nacional (CCN-CERT)"
+        },
+        {
+            "pregunta": "¿Qué rol ejecutivo es el responsable final de la estrategia de la empresa y debe garantizar los recursos adecuados para la ciberseguridad, incluyendo personal experto y formación?",
+            "opciones": [
+                "CEO (Chief Executive Officer)",
+                "CSO (Chief Security Officer)",
+                "CIO (Chief Information Officer)",
+                "CISO (Chief Information Security Officer)"
+            ],
+            "respuesta": "CEO (Chief Executive Officer)"
+        },
+        {
+            "pregunta": "¿Cuál es la diferencia fundamental entre un marco de ciberseguridad y una política de contraseñas?",
+            "opciones": [
+                "Un marco es un documento técnico obligatorio, y una política es una recomendación voluntaria.",
+                "No hay diferencia, ambos términos se refieren al conjunto de reglas de seguridad de una empresa.",
+                "Un marco es una guía de alto nivel para gestionar riesgos, mientras que una política es una regla específica.",
+                "Un marco solo se aplica a infraestructuras críticas, mientras que una política se aplica a todas las empresas."
+            ],
+            "respuesta": "Un marco es una guía de alto nivel para gestionar riesgos, mientras que una política es una regla específica."
+        },
+        {
+            "pregunta": "El rol de DPD (Delegado de Protección de Datos) es fundamental para el cumplimiento normativo. ¿Cuál es su principal responsabilidad?",
+            "opciones": [
+                "Gestionar la respuesta a incidentes de seguridad y coordinar al equipo técnico.",
+                "Asegurar el cumplimiento de la normativa en protección de datos dentro de la organización.",
+                "Realizar pruebas de penetración y hacking ético para encontrar vulnerabilidades.",
+                "Diseñar y desarrollar la estrategia tecnológica y de innovación de la empresa."
+            ],
+            "respuesta": "Asegurar el cumplimiento de la normativa en protección de datos dentro de la organización."
+        },
+        {
+            "pregunta": "El marco NIST CSF (Cybersecurity Framework) estructura su núcleo en cinco funciones principales. ¿Cuál de las siguientes describe la función 'Proteger'?",
+            "opciones": [
+                "Desarrollar e implementar los planes para restaurar los activos afectados durante un ataque.",
+                "Desarrollar e implementar las salvaguardas apropiadas para limitar o contener los impactos de incidentes.",
+                "Desarrollar e implementar las actividades para identificar la ocurrencia de un evento de ciberseguridad.",
+                "Desarrollar el conocimiento de la organización para gestionar los riesgos en sistemas y activos."
+            ],
+            "respuesta": "Desarrollar e implementar las salvaguardas apropiadas para limitar o contener los impactos de incidentes."
+        },
+        {
+            "pregunta": "Además del CISO, ¿qué rol se enfoca en asegurar el correcto tratamiento de los datos, garantizando la protección, privacidad y el cumplimiento de las leyes correspondientes?",
+            "opciones": [
+                "CSO (Chief Security Officer)",
+                "CDO (Chief Data Officer)",
+                "CTO (Chief Technology Officer)",
+                "CIO (Chief Information Officer)"
+            ],
+            "respuesta": "CDO (Chief Data Officer)"
+        },
+        {
+            "pregunta": "¿Qué tipo de marco de ciberseguridad, según la clasificación de Frank Kim, se centra en construir un programa integral de seguridad y medir su estado para comunicarlo a la dirección de la empresa?",
+            "opciones": [
+                "Marco de Cumplimiento",
+                "Marco Programático",
+                "Marco de Riesgo",
+                "Marco de Control"
+            ],
+            "respuesta": "Marco Programático"
+        },
+        {
+            "pregunta": "El INCIBE-CERT es el centro de respuesta a incidentes de seguridad de referencia para un público específico en España. ¿Cuál es?",
+            "opciones": [
+                "Para los ciudadanos y entidades de derecho privado.",
+                "Únicamente para los operadores de infraestructuras críticas designados por el CNPIC.",
+                "Para las Administraciones Públicas y los sistemas con información clasificada.",
+                "Exclusivamente para el Ministerio de Defensa y las Fuerzas Armadas."
+            ],
+            "respuesta": "Para los ciudadanos y entidades de derecho privado."
+        },
+        {
+            "pregunta": "Según el material de INISEG, ¿cuál es una de las razones por las que la ciberseguridad es una responsabilidad compartida que requiere la actuación del conjunto de las administraciones y de la sociedad?",
+            "opciones": [
+                "Porque los recursos económicos para la ciberseguridad provienen exclusivamente de donaciones privadas y ciudadanas.",
+                "Porque el ciberespacio acentúa las vulnerabilidades colectivas y sus consecuencias traspasan fronteras.",
+                "Porque la legislación internacional obliga a que todas las decisiones de ciberseguridad sean tomadas por consenso ciudadano.",
+                "Porque los ataques son exclusivamente perpetrados por actores estatales y requieren una respuesta militar."
+            ],
+            "respuesta": "Porque el ciberespacio acentúa las vulnerabilidades colectivas y sus consecuencias traspasan fronteras."
+        },
+        {
+        "pregunta": "¿Cuál es la principal diferencia entre el rol de un CISO (Chief Information Security Officer) y un CSO (Chief Security Officer)?",
+        "opciones": [
+            "El CISO se enfoca en la seguridad de la información y el CSO en la seguridad física y tecnológica global.",
+            "El CISO reporta directamente al CEO, mientras que el CSO reporta al CIO.",
+            "No hay ninguna diferencia real, son términos intercambiables para el mismo puesto.",
+            "El CSO tiene un perfil puramente técnico, mientras que el CISO es un perfil de gestión de negocio."
+        ],
+        "respuesta": "El CISO se enfoca en la seguridad de la información y el CSO en la seguridad física y tecnológica global."
+        },
+        {
+        "pregunta": "Según la Ley 36/2015 de Seguridad Nacional, ¿cuál es el papel del Consejo de Seguridad Nacional?",
+        "opciones": [
+            "A. Elaborar y publicar el informe anual de amenazas IOCTA para la Unión Europea.",
+            "B. Ejercer la respuesta operativa directa ante ciberataques contra infraestructuras críticas.",
+            "C. Gestionar exclusivamente la cooperación internacional en materia de ciberdelincuencia.",
+            "D. Asistir al Presidente del Gobierno en la dirección de la política de Seguridad Nacional."
+        ],
+        "respuesta": "D. Asistir al Presidente del Gobierno en la dirección de la política de Seguridad Nacional."
+        },
+        {
+        "pregunta": "En el contexto de los marcos de ciberseguridad, ¿cuál es el propósito principal de la fase de 'Gobernanza y gestión de riesgos'?",
+        "opciones": [
+            "Implementar controles técnicos como firewalls y cifrado de datos.",
+            "Realizar auditorías internas y externas para verificar el cumplimiento de las políticas.",
+            "Establecer cómo se toman las decisiones de seguridad, quién es responsable y el nivel de riesgo aceptable.",
+            "Desarrollar un plan de respuesta a incidentes y realizar simulacros de ataque."
+        ],
+        "respuesta": "Establecer cómo se toman las decisiones de seguridad, quién es responsable y el nivel de riesgo aceptable."
+        },
+        {
+            "pregunta": "El Convenio de Budapest de 2001 es un tratado internacional clave en la lucha contra la ciberdelincuencia. ¿Qué organismo lo promovió?",
+            "opciones": [
+            "La Organización del Tratado del Atlántico Norte (OTAN)",
+            "La Unión Europea a través de ENISA",
+            "La Organización de Naciones Unidas (ONU)",
+            "El Consejo de Europa"
+            ],
+            "respuesta": "El Consejo de Europa"
+        },
+        {
+            "pregunta": "¿Qué es un \"cortafuegos\" o \"firewall\"?",
+            "opciones": [
+                "Un sistema de seguridad que limita el flujo de tráfico de red basándose en un conjunto de reglas.",
+                "Un dispositivo que aumenta la velocidad de una conexión a Internet.",
+                "Un programa que cifra los archivos de un disco duro para protegerlos contra el robo.",
+                "Un software que realiza copias de seguridad automáticas de los datos importantes."
+            ],
+            "respuesta": "Un sistema de seguridad que limita el flujo de tráfico de red basándose en un conjunto de reglas."
+        },
+        {
+            "pregunta": "¿Cuál es la función principal de la \"informática forense\"?",
+            "opciones": [
+                "Desarrollar software de seguridad para prevenir ciberataques en tiempo real.",
+                "Recuperar datos perdidos debido a fallos de hardware o borrado accidental.",
+                "Investigar sistemas de información para detectar y preservar evidencias digitales que puedan ser presentadas en un proceso judicial.",
+                "Realizar auditorías de seguridad para identificar vulnerabilidades antes de que sean explotadas."
+            ],
+            "respuesta": "Investigar sistemas de información para detectar y preservar evidencias digitales que puedan ser presentadas en un proceso judicial."
+        },
+        {
+            "pregunta": "¿Cuál es la definición de \"activo de información\" según el INCIBE?",
+            "opciones": [
+                "Cualquier información o sistema relacionado con el tratamiento de la misma que tenga valor para la organización.",
+                "El conjunto de todos los bienes y derechos con valor monetario de una empresa.",
+                "Exclusivamente los equipos de hardware y las aplicaciones de software de una empresa.",
+                "Solo la información clasificada como secreta o reservada por una organización."
+            ],
+            "respuesta": "Cualquier información o sistema relacionado con el tratamiento de la misma que tenga valor para la organización."
+        },
+        {
+            "pregunta": "¿Cuál es la principal diferencia entre un virus y un gusano informático?",
+            "opciones": [
+                "No hay diferencia real; los términos se usan indistintamente para cualquier tipo de malware.",
+                "Un virus borra archivos, mientras que un gusano solo roba información.",
+                "Un virus requiere la acción humana para propagarse (ej. abrir un archivo), mientras que un gusano puede propagarse automáticamente a través de la red.",
+                "Un gusano infecta ordenadores, pero un virus solo afecta a dispositivos móviles."
+            ],
+            "respuesta": "Un virus requiere la acción humana para propagarse (ej. abrir un archivo), mientras que un gusano puede propagarse automáticamente a través de la red."
+        },
+        {
+            "pregunta": "¿Qué es el \"movimiento lateral\" (lateral movement) en el contexto de un ciberataque?",
+            "opciones": [
+                "El acto de obtener mayores privilegios en la máquina que ya ha sido comprometida.",
+                "El envío de datos robados desde la red interna hacia un servidor externo controlado por el atacante.",
+                "El proceso de moverse de un sistema comprometido a otro dentro de la misma red.",
+                "El primer acceso a la red desde una fuente externa, como a través de un ataque de phishing."
+            ],
+            "respuesta": "El proceso de moverse de un sistema comprometido a otro dentro de la misma red."
+        },
+        {
+            "pregunta": "En seguridad de la información, ¿qué describe la propiedad de \"integridad\"?",
+            "opciones": [
+                "La capacidad de un servicio de ser accesible y utilizable cuando los usuarios lo requieran.",
+                "La característica de que un activo de información no ha sido alterado de manera no autorizada.",
+                "La garantía de que la información está accesible únicamente para el personal autorizado.",
+                "La propiedad de que las actuaciones de una entidad pueden ser imputadas exclusivamente a dicha entidad."
+            ],
+            "respuesta": "La característica de que un activo de información no ha sido alterado de manera no autorizada."
+        },
+        {
+            "pregunta": "¿Qué es una vulnerabilidad de \"día cero\" (Zero-day)?",
+            "opciones": [
+                "Un tipo de malware que se elimina automáticamente después de un día de infectar un sistema.",
+                "Un ataque que se produce el primer día que un nuevo software es lanzado al mercado.",
+                "Una vulnerabilidad en un software que es desconocida por el fabricante y para la cual no existe un parche de seguridad.",
+                "Una vulnerabilidad que solo puede ser explotada durante las primeras 24 horas después de su descubrimiento."
+            ],
+            "respuesta": "Una vulnerabilidad en un software que es desconocida por el fabricante y para la cual no existe un parche de seguridad."
+        },
+        {
+            "pregunta": "¿Cuál es la diferencia fundamental entre un administrador local (local admin) y un administrador de dominio (domain admin)?",
+            "opciones": [
+                "Un administrador de dominio puede restablecer contraseñas, pero un administrador local no.",
+                "Un administrador local solo tiene privilegios elevados en una máquina específica, mientras que un administrador de dominio los tiene en todo el dominio.",
+                "Un administrador local puede instalar software, pero un administrador de dominio no puede.",
+                "No hay diferencia; ambos términos se refieren al mismo nivel de privilegios."
+            ],
+            "respuesta": "Un administrador local solo tiene privilegios elevados en una máquina específica, mientras que un administrador de dominio los tiene en todo el dominio."
+        },
+        {
+            "pregunta": "En el contexto de una prueba de penetración en Active Directory, ¿qué herramienta se utiliza comúnmente para extraer credenciales como hashes NTLM y tickets Kerberos de la memoria del proceso LSASS?",
+            "opciones": [
+                "X3 RDP",
+                "Cherry Tree",
+                "PS exec",
+                "mimikats"
+            ],
+            "respuesta": "mimikats"
+        },
+        {
+            "pregunta": "¿Qué es el \"riesgo residual\"?",
+            "opciones": [
+                "Un riesgo que no ha sido identificado durante el análisis de riesgos.",
+                "El riesgo inicial antes de aplicar cualquier medida de seguridad.",
+                "El riesgo que subsiste después de haber implementado controles de seguridad.",
+                "El riesgo que es aceptado por la organización porque su mitigación es demasiado costosa."
+            ],
+            "respuesta": "El riesgo que subsiste después de haber implementado controles de seguridad."
+        },        
+        {
+        "pregunta": "¿Qué técnica de ataque permite a un atacante autenticarse en otros sistemas de una red utilizando el hash NTLM de un usuario sin necesidad de conocer su contraseña en texto claro?",
+        "opciones": [
+            "Golden Ticket",
+            "Pass the Hash",
+            "Privilege Escalation",
+            "Lateral Movement"
+        ],
+        "respuesta": "Pass the Hash"
+        }, 
+        {
+        "pregunta": "¿Qué significa la fase de \"enumeración\" en una prueba de penetración?",
+        "opciones": [
+            "La recopilación activa de información sobre los sistemas, usuarios, grupos y recursos de una red objetivo.",
+            "La instalación de una puerta trasera para mantener el acceso a un sistema comprometido.",
+            "La explotación de una vulnerabilidad para obtener acceso a un sistema.",
+            "El borrado de registros y huellas para evitar ser detectado."
+        ],
+        "respuesta": "La recopilación activa de información sobre los sistemas, usuarios, grupos y recursos de una red objetivo."
+        },
+        {
+        "pregunta": "¿A qué se refiere el término \"Botnet\"?",
+        "opciones": [
+            "Un tipo de hardware de red diseñado para filtrar tráfico malicioso.",
+            "Un conjunto de ordenadores controlados remotamente por un atacante para realizar actividades maliciosas de forma conjunta.",
+            "Un software antivirus avanzado que utiliza inteligencia artificial para detectar amenazas.",
+            "Una red privada virtual (VPN) utilizada por los ciberdelincuentes para ocultar su identidad."
+        ],
+        "respuesta": "Un conjunto de ordenadores controlados remotamente por un atacante para realizar actividades maliciosas de forma conjunta."
+        },
+        {
+        "pregunta": "¿Qué tecnología se define como una extensión segura de una red local (LAN) sobre una red pública como Internet, utilizando autenticación y cifrado?",
+        "opciones": [
+            "Firewall",
+            "VLAN (Virtual Local Area Network)",
+            "VPN (Virtual Private Network)",
+            "LAN (Local Area Network)"
+        ],
+        "respuesta": "VPN (Virtual Private Network)"
+        },
+        {
+        "pregunta": "En el escenario de la prueba de penetración del video, ¿qué vector de escalada de privilegios se utilizó para pasar de ser un usuario estándar a administrador local en el servidor web02?",
+        "opciones": [
+            "Se utilizó un ataque de fuerza bruta para adivinar la contraseña del administrador local.",
+            "Se aprovechó una vulnerabilidad de \"día cero\" en el sistema operativo Windows.",
+            "Se engañó a otro usuario administrador para que ejecutara un programa malicioso mediante ingeniería social.",
+            "Se explotó una configuración incorrecta de permisos en el archivo ejecutable de un servicio que se ejecutaba como Local System."
+        ],
+        "respuesta": "Se explotó una configuración incorrecta de permisos en el archivo ejecutable de un servicio que se ejecutaba como Local System."
+        },
+        {
+            "pregunta": "En la estructura organizativa de la ciberseguridad, ¿cuál es la principal función del CISO (Chief Information Security Officer)?",
+            "opciones": [
+                "Gestionar la seguridad física de las instalaciones y la protección del personal, además de la seguridad de la información.",
+                "Ser el responsable final de todas las acciones de la empresa y supervisar su desempeño y eficiencia.",
+                "Alinear la seguridad de la información con los objetivos de negocio para proteger adecuadamente los datos.",
+                "Alinear las estrategias de la organización con la tecnología de la información para lograr los objetivos planificados."
+            ],
+            "respuesta": "Alinear la seguridad de la información con los objetivos de negocio para proteger adecuadamente los datos."
+        },
+        {
+            "pregunta": "Dentro de la clasificación de la información por disponibilidad, ¿cuál es la categoría que se asigna a la información que debe estar accesible en todo momento y de forma obligatoria?",
+            "opciones": [
+                "Importante",
+                "No crítica",
+                "Urgente",
+                "Necesaria"
+            ],
+            "respuesta": "Urgente"
+        },
+        {
+            "pregunta": "En el contexto de un SGSI, ¿cuál de los siguientes es un objetivo de la función 'Recuperar' del marco de ciberseguridad del NIST?",
+            "opciones": [
+                "Establecer mecanismos de defensa como la formación y sensibilización del personal.",
+                "Entender el contexto empresarial y los riesgos de ciberseguridad para enfocar los esfuerzos.",
+                "Mantener una política robusta de copias de seguridad (backups) para restaurar el servicio tras un desastre.",
+                "Instalar herramientas y sistemas para identificar la ocurrencia de un evento de ciberseguridad."
+            ],
+            "respuesta": "Mantener una política robusta de copias de seguridad (backups) para restaurar el servicio tras un desastre."
+        },
+        {
+            "pregunta": "¿Cuál es la principal motivación de los grupos de crimen organizado que operan en el ciberespacio, según el material de INISEG?",
+            "opciones": [
+                "El ciberespionaje para obtener información sensible de Estados.",
+                "La satisfacción personal y el desafío de vulnerar sistemas.",
+                "La obtención de un beneficio económico.",
+                "La propaganda y el reclutamiento para una causa ideológica."
+            ],
+            "respuesta": "La obtención de un beneficio económico."
+        },
+        {
+            "pregunta": "Un ataque de 'phishing' se basa en la ingeniería social para engañar a las víctimas. ¿Cuál de las siguientes acciones describe mejor un ataque de 'spear phishing'?",
+            "opciones": [
+                "La inundación de un servidor con solicitudes para que deje de estar disponible para los usuarios legítimos.",
+                "El envío masivo de correos electrónicos fraudulentos a miles de usuarios de forma indiscriminada.",
+                "El cifrado de todos los archivos de un sistema para solicitar un rescate a cambio de la clave de descifrado.",
+                "Un ataque altamente dirigido y personalizado contra un individuo o grupo específico dentro de una organización."
+            ],
+            "respuesta": "Un ataque altamente dirigido y personalizado contra un individuo o grupo específico dentro de una organización."
+        },
+        {
+            "pregunta": "El término 'Amenaza Activa' se diferencia de una 'Amenaza Pasiva' en ciberseguridad. ¿Cuál de las siguientes opciones es un ejemplo de amenaza activa?",
+            "opciones": [
+                "La interceptación y escucha del tráfico de red sin alterarlo.",
+                "El monitoreo del flujo de comunicaciones entre dos puntos para identificar patrones.",
+                "El análisis de las emisiones electromagnéticas de un equipo para deducir información.",
+                "La modificación no autorizada de la información en una base de datos."
+            ],
+            "respuesta": "La modificación no autorizada de la información en una base de datos."
+        },
+        {
+            "pregunta": "El documento 'Guía Glosario Ciberseguridad' define 'malware' como un término genérico. ¿Cuál de las siguientes opciones NO es un tipo de malware?",
+            "opciones": [
+                "Gusano (Worm)",
+                "Virus",
+                "Troyano (Trojan)",
+                "Cortafuegos (Firewall)"
+            ],
+            "respuesta": "Cortafuegos (Firewall)"
+        },
+        {
+            "pregunta": "¿Qué es un 'exploit' en el contexto de la ciberseguridad?",
+            "opciones": [
+                "Un tipo de malware que se propaga automáticamente a través de las redes sin intervención humana.",
+                "Una secuencia de comandos o un programa que se aprovecha de un fallo o vulnerabilidad en un sistema.",
+                "Un programa que registra las pulsaciones del teclado de un usuario para robar credenciales.",
+                "Un software que se disfraza de programa legítimo para obtener acceso no autorizado."
+            ],
+            "respuesta": "Una secuencia de comandos o un programa que se aprovecha de un fallo o vulnerabilidad en un sistema."
+        },
+        {
+            "pregunta": "¿Qué tipo de ataque se caracteriza por aprovecharse de defectos en la programación que permiten sobrescribir datos en otros puntos de la memoria, pudiendo ejecutar comandos no autorizados?",
+            "opciones": [
+                "Inyección SQL",
+                "Desbordamiento de búfer (Buffer Overflow)",
+                "Ransomware",
+                "Ataque de Denegación de Servicio (DoS)"
+            ],
+            "respuesta": "Desbordamiento de búfer (Buffer Overflow)"
+        },
+        {
+            "pregunta": "En el contexto de la clasificación de la información, si la pérdida de integridad de ciertos datos afecta notablemente la operatividad de la organización y puede incurrir en responsabilidad legal, ¿cómo se clasificaría su integridad?",
+            "opciones": [
+                "Confidencial",
+                "Especial",
+                "Normal",
+                "Básica"
+            ],
+            "respuesta": "Especial"
+        },
+        {
+        "pregunta": "En el marco de la Política de Ciberseguridad de Ecuador, el pilar 'Cultura y educación' se enfoca en un elemento considerado la primera línea de protección. ¿Cuál es ese elemento?",
+        "opciones": [
+            "Los usuarios y la población en general.",
+            "Las infraestructuras críticas digitales.",
+            "Los sistemas de gestión de incidentes (CSIRT).",
+            "La normativa y el marco legal del país."
+        ],
+        "respuesta": "Los usuarios y la población en general."
+        },
+        {
+        "pregunta": "Según el material de estudio de INISEG, ¿cuál es el actor de amenaza al que se le atribuye el mayor porcentaje de incidentes de seguridad, a menudo debido a acciones negligentes?",
+        "opciones": [
+            "Los empleados de la propia organización (insiders).",
+            "Actores estatales que realizan ciberespionaje.",
+            "Activistas (hacktivistas) que buscan promover una causa.",
+            "Grupos de crimen organizado con fines económicos."
+        ],
+        "respuesta": "Los empleados de la propia organización (insiders)."
+        },
+        {
+        "pregunta": "¿Qué tipo de software malicioso se inserta intencionadamente en un programa y permanece oculto hasta que se cumple una condición preprogramada, como una fecha específica, para ejecutar una acción dañina?",
+        "opciones": [
+            "Gusano (Worm)",
+            "Spyware",
+            "Bomba Lógica (Logic Bomb)",
+            "Troyano (Trojan)"
+        ],
+        "respuesta": "Bomba Lógica (Logic Bomb)"
+        },
+        {
+        "pregunta": "El término 'insider' se refiere a una amenaza interna. ¿Cuál de estas situaciones describe a un 'insider' actuando por negligencia?",
+        "opciones": [
+            "Un desarrollador que introduce una bomba lógica en el código antes de renunciar.",
+            "Un empleado que vende secretos comerciales a un competidor.",
+            "Un administrador de sistemas que instala una puerta trasera para acceder a la red después de ser despedido.",
+            "Un trabajador que hace clic en un enlace de un correo de phishing y compromete sus credenciales sin darse cuenta."
+        ],
+        "respuesta": "Un trabajador que hace clic en un enlace de un correo de phishing y compromete sus credenciales sin darse cuenta."
+        },
+        {
+        "pregunta": "¿Cuál de las siguientes opciones describe mejor el concepto de 'Resiliencia' en el contexto de la ciberseguridad nacional española?",
+        "opciones": [
+            "La optimización y el uso eficiente de los recursos tecnológicos y humanos dedicados a la ciberseguridad.",
+            "La capacidad de un sistema o infraestructura crítica para resistir y recuperarse de un incidente o ciberataque.",
+            "La capacidad de anticipar amenazas futuras mediante sistemas de alerta temprana.",
+            "La gestión centralizada de las crisis para tener una visión completa de la situación y coordinar la respuesta."
+        ],
+        "respuesta": "La capacidad de un sistema o infraestructura crítica para resistir y recuperarse de un incidente o ciberataque."
+        },
+        {
+        "pregunta": "Según la Política Nacional de Ciberseguridad de Ecuador, ¿cuál fue el delito informático más frecuente registrado entre 2018 y 2020?",
+        "opciones": [
+            "Apropiación fraudulenta por medios electrónicos.",
+            "Ataque a la integridad de sistemas informáticos.",
+            "Suplantación de identidad.",
+            "Violación a la intimidad."
+        ],
+        "respuesta": "Apropiación fraudulenta por medios electrónicos."
+        },
+        {
+        "pregunta": "Dentro de un plan de seguridad, ¿cuál de las siguientes medidas corresponde principalmente a la fase de 'Prevención'?",
+        "opciones": [
+            "La autenticación de usuarios para validar accesos.",
+            "El uso de la firma digital para verificar la autoría de un documento.",
+            "La realización de copias de seguridad (backups).",
+            "El cifrado de la información y la instalación de cortafuegos."
+        ],
+        "respuesta": "El cifrado de la información y la instalación de cortafuegos."
+        },
+        {
+            "pregunta": "¿Qué técnica de ataque, también conocida como 'ataque de caja negra', utiliza malware para forzar a un cajero automático a expulsar todo su efectivo?",
+            "opciones": [
+            "Pharming",
+            "Replay Attack",
+            "Jackpotting",
+            "Skimming"
+            ],
+            "respuesta": "Jackpotting"
+        },
+        {
+            "pregunta": "Según INISEG, ¿cuál es el requisito fundamental para que la Política de Seguridad sea un documento útil?",
+            "opciones": [
+                "Debe centrarse exclusivamente en las sanciones legales por incumplimiento.",
+                "Debe ser aprobado por la dirección y difundido para que sea conocido por todo el personal.",
+                "Debe ser un documento secreto conocido solo por el CISO.",
+                "Debe ser redactado únicamente siguiendo criterios tecnológicos de última generación."
+            ],
+            "respuesta": "Debe ser aprobado por la dirección y difundido para que sea conocido por todo el personal."
+        },
+        {
+            "pregunta": "¿Qué diferencia establece el material de INISEG entre un 'evento' y un 'incidente' de seguridad?",
+            "opciones": [
+                "Todo evento es un incidente, pero no todo incidente es un evento.",
+                "Son términos sinónimos y se usan indistintamente.",
+                "Todo incidente es un evento, pero no todo evento es un incidente.",
+                "Un incidente es algo planeado y un evento es accidental."
+            ],
+            "respuesta": "Todo incidente es un evento, pero no todo evento es un incidente."
+        },
+        {
+            "pregunta": "De acuerdo con el material de INISEG, ¿cuál es la visión recomendada que debe tener una organización sobre el gasto en ciberseguridad?",
+            "opciones": [
+                "Debe considerarse un coste operativo inevitable.",
+                "Es un gasto que solo deben asumir las empresas tecnológicas.",
+                "Es un requisito puramente legal sin beneficios económicos directos.",
+                "Debe entenderse como una inversión parte de la estrategia de negocio."
+            ],
+            "respuesta": "Debe entenderse como una inversión parte de la estrategia de negocio."
+        },
+        {
+            "pregunta": "Según el 'Libro Blanco del CISO', ¿qué tendencia se observa respecto al perfil profesional y la dependencia jerárquica de este rol en España?",
+            "opciones": [
+                "El 55% tiene perfil técnico y la mayoría informa al CIO (aunque preferirían al CEO).",
+                "La mayoría tiene un perfil puramente administrativo.",
+                "Es una figura que está desapareciendo en favor del Director de TI.",
+                "La mayoría reporta directamente al CEO y tiene perfil legal."
+            ],
+            "respuesta": "El 55% tiene perfil técnico y la mayoría informa al CIO (aunque preferirían al CEO)."
+        },
+        {
+            "pregunta": "¿Cuál es la función del Centro Criptológico Nacional (CCN) en relación con el Esquema Nacional de Seguridad (ENS)?",
+            "opciones": [
+                "Se encarga exclusivamente de la seguridad física de los edificios oficiales.",
+                "Es organismo de certificación para productos y sistemas en su ámbito.",
+                "Gestiona únicamente las redes sociales del Gobierno.",
+                "Es el único encargado de redactar las leyes de ciberseguridad."
+            ],
+            "respuesta": "Es organismo de certificación para productos y sistemas en su ámbito."
+        },
+        {
+            "pregunta": "Dentro del modelo PDCA (Plan-Do-Check-Act) para la implantación de un SGSI, ¿qué actividad es fundamental realizar en la fase de 'Planificar' (Plan)?",
+            "opciones": [
+                "Establecer el contexto, realizar el análisis de riesgos y seleccionar los controles.",
+                "Ejecutar tareas de mantenimiento y acciones correctivas basadas en resultados.",
+                "Realizar auditorías internas y monitorear la eficacia de los controles.",
+                "Ejecutar el plan de riesgos y los controles seleccionados."
+            ],
+            "respuesta": "Establecer el contexto, realizar el análisis de riesgos y seleccionar los controles."
+        },
+        {
+            "pregunta": "Dentro de las funciones básicas propuestas por el NIST para infraestructuras críticas, ¿qué implica la función de 'Proteger'?",
+            "opciones": [
+                "Desarrollar e implementar salvaguardas para limitar el impacto de un incidente.",
+                "Restaurar las capacidades o servicios que resultaron afectados.",
+                "Identificar todos los activos físicos y digitales de la empresa.",
+                "Detectar en tiempo real la ocurrencia de un evento de ciberseguridad."
+            ],
+            "respuesta": "Desarrollar e implementar salvaguardas para limitar el impacto de un incidente."
+        },
+        {
+            "pregunta": "En la clasificación de la información relativa a la 'integridad', ¿qué caracteriza a la clase 'Especial'?",
+            "opciones": [
+                "Es información que solo debe estar disponible en horario de oficina.",
+                "La información debe estar permanentemente actualizada y su alteración incurre en responsabilidad.",
+                "La información es de solo lectura y no requiere actualizaciones.",
+                "Solo afecta a la imagen pública de la organización si se modifica."
+            ],
+            "respuesta": "La información debe estar permanentemente actualizada y su alteración incurre en responsabilidad."
+        },
+        {
+            "pregunta": "En el ciclo PDCA, ¿qué ocurre durante la fase de 'Actuar' (Act)?",
+            "opciones": [
+                "Se definen los activos de información.",
+                "Se ejecutan tareas de mantenimiento y propuestas de mejora.",
+                "Se seleccionan los controles de seguridad.",
+                "Se implementa el sistema de gestión por primera vez."
+            ],
+            "respuesta": "Se ejecutan tareas de mantenimiento y propuestas de mejora."
+        },
+        {
+            "pregunta": "Dentro de las medidas de seguridad, ¿dónde se clasificaría la elección de la ubicación de los sistemas y la construcción de la sala?",
+            "opciones": [
+                "Medidas físicas.",
+                "Medidas organizativas.",
+                "Medidas técnicas.",
+                "Medidas legales."
+            ],
+            "respuesta": "Medidas físicas."
+        },
+        {
+        "pregunta": "¿Qué representa una 'vulnerabilidad' en el ámbito de la ciberseguridad según las definiciones proporcionadas?",
+        "opciones": [
+            "El impacto económico tras un desastre natural.",
+            "Un ataque informático en curso.",
+            "Una debilidad que puede ser aprovechada por una amenaza.",
+            "Un tipo específico de malware como un troyano."
+        ],
+        "respuesta": "Una debilidad que puede ser aprovechada por una amenaza."
+        },
+        {
+        "pregunta": "Dentro de la gestión de riesgos en un SGSI, ¿cuál es el propósito de realizar un análisis de riesgos inicial?",
+        "opciones": [
+            "Eliminar todos los riesgos de la empresa antes de empezar.",
+            "Culpar a los empleados de los posibles fallos.",
+            "Cumplir con un trámite burocrático sin aplicación práctica.",
+            "Identificar los activos de información y el grado de protección que requieren."
+        ],
+        "respuesta": "Identificar los activos de información y el grado de protección que requieren."
+        },
+        {
+        "pregunta": "Según el material de INISEG, ¿cuál es el objetivo principal de las 'medidas técnicas' de seguridad?",
+        "opciones": [
+            "Proteger el software y los datos, garantizando la confidencialidad e integridad.",
+            "Proteger el hardware y la ubicación física de los sistemas.",
+            "Establecer la estructura jerárquica de mando en caso de incidentes.",
+            "Definir las obligaciones legales de los empleados y terceros."
+        ],
+        "respuesta": "Proteger el software y los datos, garantizando la confidencialidad e integridad."
+        },
+        {
+        "pregunta": "¿Qué herramienta se menciona como clave para asegurar que las obligaciones de los usuarios respecto al tratamiento de la información sean conocidas?",
+        "opciones": [
+            "La instalación de cámaras de vigilancia en cada puesto.",
+            "La confección y difusión de normativas internas.",
+            "El uso de contraseñas de más de 20 caracteres.",
+            "La contratación de hackers éticos externos mensualmente."
+        ],
+        "respuesta": "La confección y difusión de normativas internas."
+        },
+        {
+        "pregunta": "Según el material de INISEG, ¿cuál es el papel de la dirección en la gestión de un SGSI?",
+        "opciones": [
+            "Intervenir solo cuando se produce un incidente grave.",
+            "Delegar toda la responsabilidad en el departamento técnico.",
+            "Estar completamente involucrada y concienciar al personal sobre la importancia de la protección.",
+            "Encargarse personalmente de la configuración de los cortafuegos."
+        ],
+        "respuesta": "Estar completamente involucrada y concienciar al personal sobre la importancia de la protección."
+        },
+        {
+        "pregunta": "En la clasificación de la información relativa a la 'disponibilidad', ¿qué define a la clase 'Urgente'?",
+        "opciones": [
+            "Información que puede esperar hasta 48 horas para ser restaurada.",
+            "Información pública que ya está en la página web.",
+            "Información que debe estar disponible en todo momento y de forma obligatoria.",
+            "Documentos que solo se usan para auditorías anuales."
+        ],
+        "respuesta": "Información que debe estar disponible en todo momento y de forma obligatoria."
+        },
+        {
+        "pregunta": "¿Qué propiedad de la seguridad se define como la capacidad de que las actuaciones de una entidad puedan ser imputadas exclusivamente a dicha entidad?",
+        "opciones": [
+            "Disponibilidad.",
+            "Trazabilidad.",
+            "Confidencialidad.",
+            "Resiliencia."
+        ],
+        "respuesta": "Trazabilidad."
+        },
+        {
+        "pregunta": "En la fase de 'Hacer' (Do) del modelo PDCA, además de implementar controles, ¿qué otro aspecto se menciona como vital?",
+        "opciones": [
+            "Realizar la revisión por la dirección.",
+            "El tiempo de concienciación y formación del personal.",
+            "Definir el alcance del SGSI.",
+            "Ejecutar auditorías externas de certificación."
+        ],
+        "respuesta": "El tiempo de concienciación y formación del personal."
+        },
+        {
+        "pregunta": "De acuerdo con el material proporcionado, ¿por qué se afirma que la seguridad es un 'proceso que nunca termina'?",
+        "opciones": [
+            "Porque las leyes cambian cada semana.",
+            "Porque los riesgos nunca se eliminan en su totalidad y deben ser gestionados continuamente.",
+            "Porque es un requisito de marketing de las empresas de seguridad.",
+            "Porque los equipos informáticos caducan muy rápido."
+        ],
+        "respuesta": "Porque los riesgos nunca se eliminan en su totalidad y deben ser gestionados continuamente."
+        },
+        {
+            "pregunta": "En el contexto de un SGSI, ¿qué acción define a la fase de 'Verificar' (Check)?",
+            "opciones": [
+            "Realizar el análisis de riesgos inicial.",
+            "Llevar a cabo la formación y concienciación del personal.",
+            "Actualizar las políticas de seguridad según los cambios del mercado.",
+            "Monitorear actividades y realizar auditorías internas para evaluar la eficacia."
+            ],
+            "respuesta": "Monitorear actividades y realizar auditorías internas para evaluar la eficacia."
+        }
+    ];
     const btnRegresar = document.getElementById("regresar");
     const btnReiniciar = document.getElementById("reiniciar");
 
@@ -898,6 +1636,7 @@
         else if (tipo === 2) preguntas = json2;
         else if (tipo === 3) preguntas = json3;
         else if (tipo === 4) preguntas = json4;
+        else if (tipo === 5) preguntas = json5;
 
         usadas = [];
         correctas = 0;
@@ -1002,6 +1741,7 @@
         else if (tipo === 2) conjunto = json2;
         else if (tipo === 3) conjunto = json3;
         else if (tipo === 4) conjunto = json4;
+        else if (tipo === 5) conjunto = json5;
 
         const contenedor = document.getElementById("contenedor");
 
